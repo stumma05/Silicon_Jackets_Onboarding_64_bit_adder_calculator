@@ -18,4 +18,4 @@ The core module interfaces with SRAM cells and executes states governed by an in
 * **Randomized Testing:** Executed high-volume randomized read/write sequences to stress-test the FSM and memory interfaces.
 
 ## How to Run
-[Insert the terminal commands required to compile and run your simulation here. For example: `make run_vcs` or `xrun -f filelist.f`]
+- Use the make file commands (`make xrun`, `make vcs`, etc.)
