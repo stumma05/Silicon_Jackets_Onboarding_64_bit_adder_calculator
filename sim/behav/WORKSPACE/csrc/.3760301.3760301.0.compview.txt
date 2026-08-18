@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1758905489.939317411, "rt":1.51, "ut":0.57, "st":0.35}}
+{"vcselab":{"timestamp_begin":1758905491.656476614, "rt":0.56, "ut":0.26, "st":0.15}}
+{"link":{"timestamp_begin":1758905492.380113904, "rt":0.45, "ut":0.19, "st":0.19}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1758905487.904378186}
+{"VCS_COMP_START_TIME": 1758905487.904378186}
+{"VCS_COMP_END_TIME": 1758905497.952201184}
+{"VCS_USER_OPTIONS": "-file sym_links/sim_no_path.include +v2k -R +lint=all -sverilog -full64 -kdb +incdir+sym_links -timescale=1ns/10ps -debug_acc+pp+dmptf -debug_region+cell+encrypt -cm line+tgl+cond+branch+fsm+assert -debug_access+all -l simulation.log +vpdfile+./simulation.vpd +fsdb+./simulation.fsdb +dumpvars +define+SIM=1+VCS=1 +testname="}
+{"vcs1": {"peak_mem": 492904}}
+{"vcselab": {"peak_mem": 196116}}

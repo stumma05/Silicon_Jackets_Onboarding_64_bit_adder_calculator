@@ -1,0 +1,1241 @@
+Command: vcs -file sym_links/sim_no_path.include +v2k -R +lint=all -sverilog -full64 \
+-kdb +incdir+sym_links -timescale=1ns/10ps -debug_acc+pp+dmptf -debug_region+cell+encrypt \
+-cm line+tgl+cond+branch+fsm+assert -debug_access+all -l simulation.log +vpdfile+./simulation.vpd \
++fsdb+./simulation.fsdb +dumpvars +define+SIM=1+VCS=1 +testname=
+                         Chronologic VCS (TM)
+       Version W-2024.09-SP2_Full64 -- Sat Sep 27 21:14:44 2025
+
+                    Copyright (c) 1991 - 2025 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file 'sym_links/calculator_pkg.sv'
+Parsing design file 'sym_links/adder32.sv'
+
+Lint-[SV-PIU] Package import statement in $unit scope.
+sym_links/adder32.sv, 4
+$unit
+  There is an import statement in $unit scope.
+  Although this is legal as per the SystemVerilog LRM, it means that package 
+  content will be shared without explicit import of the package.
+  Package: calculator_pkg::*
+
+Parsing design file 'sym_links/controller.sv'
+
+Lint-[SV-PIU] Package import statement in $unit scope.
+sym_links/controller.sv, 1
+$unit
+  There is an import statement in $unit scope.
+  Although this is legal as per the SystemVerilog LRM, it means that package 
+  content will be shared without explicit import of the package.
+  Package: calculator_pkg::*
+
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+sym_links/controller.sv, 1
+$unit
+  Package 'calculator_pkg' already wildcard imported. 
+  Ignoring calculator_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Parsing design file 'sym_links/full_adder.sv'
+Parsing design file 'sym_links/result_buffer.sv'
+
+Lint-[SV-PIU] Package import statement in $unit scope.
+sym_links/result_buffer.sv, 7
+$unit
+  There is an import statement in $unit scope.
+  Although this is legal as per the SystemVerilog LRM, it means that package 
+  content will be shared without explicit import of the package.
+  Package: calculator_pkg::*
+
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+sym_links/result_buffer.sv, 7
+$unit
+  Package 'calculator_pkg' already wildcard imported. 
+  Ignoring calculator_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Parsing design file 'sym_links/sky130_sram_2kbyte_1rw1r_32x512_8.sv'
+Parsing design file 'sym_links/top_lvl.sv'
+
+Lint-[SV-PIU] Package import statement in $unit scope.
+sym_links/top_lvl.sv, 5
+$unit
+  There is an import statement in $unit scope.
+  Although this is legal as per the SystemVerilog LRM, it means that package 
+  content will be shared without explicit import of the package.
+  Package: calculator_pkg::*
+
+
+Note-[SV-LCM-PPWI] Package previously wildcard imported
+sym_links/top_lvl.sv, 5
+$unit
+  Package 'calculator_pkg' already wildcard imported. 
+  Ignoring calculator_pkg::*
+  See the SystemVerilog LRM(1800-2005), section 19.2.1.
+
+Parsing design file 'sym_links/calc_seq_item.svh'
+Parsing design file 'sym_links/calc_tb_pkg.sv'
+Parsing included file 'sym_links/calc_seq_item.svh'.
+Back to file 'sym_links/calc_tb_pkg.sv'.
+Parsing included file 'sym_links/calc_driver.svh'.
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 25
+  Null statement is used in following verilog source.
+  Source info:     repeat(10) @(calcVif.cb);
+
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 28
+  Null statement is used in following verilog source.
+  Source info:     repeat(5) @(calcVif.cb);     // Wait 5 clock cycles
+
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 30
+  Null statement is used in following verilog source.
+  Source info:     @(calcVif.cb);               // Wait 1 more cycle
+
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 46
+  Null statement is used in following verilog source.
+  Source info:     repeat(2) @(calcVif.cb);                // Wait 1 clock 
+  cycle for DUT to sample
+
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 63
+  Null statement is used in following verilog source.
+  Source info:     wait(calcVif.ready);
+
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 68
+  Null statement is used in following verilog source.
+  Source info:     @(calcVif.cb iff calcVif.cb.ready);
+
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 74
+  Null statement is used in following verilog source.
+  Source info:           @(calcVif.cb);
+
+Back to file 'sym_links/calc_tb_pkg.sv'.
+Parsing included file 'sym_links/calc_monitor.svh'.
+
+Lint-[NS] Null statement
+sym_links/calc_monitor.svh, 14
+  Null statement is used in following verilog source.
+  Source info:       @(calcVif.cb);
+
+
+Lint-[NS] Null statement
+sym_links/calc_monitor.svh, 43
+  Null statement is used in following verilog source.
+  Source info:           @(calcVif.cb);
+
+Back to file 'sym_links/calc_tb_pkg.sv'.
+Parsing included file 'sym_links/calc_sequencer.svh'.
+Back to file 'sym_links/calc_tb_pkg.sv'.
+Parsing included file 'sym_links/calc_sb.svh'.
+Back to file 'sym_links/calc_tb_pkg.sv'.
+Parsing design file 'sym_links/calc_driver.svh'
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 25
+  Null statement is used in following verilog source.
+  Source info:     repeat(10) @(calcVif.cb);
+
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 28
+  Null statement is used in following verilog source.
+  Source info:     repeat(5) @(calcVif.cb);     // Wait 5 clock cycles
+
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 30
+  Null statement is used in following verilog source.
+  Source info:     @(calcVif.cb);               // Wait 1 more cycle
+
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 46
+  Null statement is used in following verilog source.
+  Source info:     repeat(2) @(calcVif.cb);                // Wait 1 clock 
+  cycle for DUT to sample
+
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 63
+  Null statement is used in following verilog source.
+  Source info:     wait(calcVif.ready);
+
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 68
+  Null statement is used in following verilog source.
+  Source info:     @(calcVif.cb iff calcVif.cb.ready);
+
+
+Lint-[NS] Null statement
+sym_links/calc_driver.svh, 74
+  Null statement is used in following verilog source.
+  Source info:           @(calcVif.cb);
+
+Parsing design file 'sym_links/calc_monitor.svh'
+
+Lint-[NS] Null statement
+sym_links/calc_monitor.svh, 14
+  Null statement is used in following verilog source.
+  Source info:       @(calcVif.cb);
+
+
+Lint-[NS] Null statement
+sym_links/calc_monitor.svh, 43
+  Null statement is used in following verilog source.
+  Source info:           @(calcVif.cb);
+
+Parsing design file 'sym_links/calc_sb.svh'
+Parsing design file 'sym_links/calc_sequencer.svh'
+Parsing design file 'sym_links/calc_if.sv'
+Parsing design file 'sym_links/calc_tb_top.sv'
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 62
+  Null statement is used in following verilog source.
+  Source info:     @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 100
+  Null statement is used in following verilog source.
+  Source info:     repeat(2) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 102
+  Null statement is used in following verilog source.
+  Source info:     repeat(2) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 105
+  Null statement is used in following verilog source.
+  Source info:     repeat(2) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 118
+  Null statement is used in following verilog source.
+  Source info:     repeat(2) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 120
+  Null statement is used in following verilog source.
+  Source info:     repeat(2) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 123
+  Null statement is used in following verilog source.
+  Source info:     repeat(2) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 131
+  Null statement is used in following verilog source.
+  Source info:     repeat(10) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 147
+  Null statement is used in following verilog source.
+  Source info:         wait (state == S_READ);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 150
+  Null statement is used in following verilog source.
+  Source info:         repeat(5) @(calc_if.cb);     // Wait 5 clock cycles
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 152
+  Null statement is used in following verilog source.
+  Source info:         @(calc_if.cb);               // Wait 1 more cycle
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 157
+  Null statement is used in following verilog source.
+  Source info:     repeat(10) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 166
+  Null statement is used in following verilog source.
+  Source info:         wait (state == S_WRITE);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 169
+  Null statement is used in following verilog source.
+  Source info:         repeat(5) @(calc_if.cb);     // Wait 5 clock cycles
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 171
+  Null statement is used in following verilog source.
+  Source info:         @(calc_if.cb);               // Wait 1 more cycle
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 176
+  Null statement is used in following verilog source.
+  Source info:     repeat(10) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 185
+  Null statement is used in following verilog source.
+  Source info:         wait (state == S_ADD);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 188
+  Null statement is used in following verilog source.
+  Source info:         repeat(5) @(calc_if.cb);     // Wait 5 clock cycles
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 190
+  Null statement is used in following verilog source.
+  Source info:         @(calc_if.cb);               // Wait 1 more cycle
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 195
+  Null statement is used in following verilog source.
+  Source info:     repeat(10) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 205
+  Null statement is used in following verilog source.
+  Source info:     repeat(20) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 215
+  Null statement is used in following verilog source.
+  Source info:     repeat(20) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 228
+  Null statement is used in following verilog source.
+  Source info:     repeat(20) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 236
+  Null statement is used in following verilog source.
+  Source info:     repeat(20) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 252
+  Null statement is used in following verilog source.
+  Source info:       repeat (10) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 257
+  Null statement is used in following verilog source.
+  Source info:       repeat (100) @(posedge clk);
+
+
+Lint-[NS] Null statement
+sym_links/calc_tb_top.sv, 260
+  Null statement is used in following verilog source.
+  Source info:     repeat (10) @(posedge clk);
+
+Top Level Modules:
+       calc_tb_top
+TimeScale is 1 ns / 10 ps
+
+Lint-[SVA-NSVU] Non-sampled variable used
+sym_links/calc_tb_top.sv, 278
+"state"
+  Non-sampled variable "state" is used in action block of assertion.
+
+
+Lint-[SVA-CE] Complex expression found
+sym_links/calc_tb_top.sv, 294
+calc_tb_top, "(($isunknown(state) || (state != S_IDLE)) || (state != S_END))"
+  Complex (($isunknown(state) || (state != S_IDLE)) || (state != S_END)) 
+  expression is used with assert property.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/calc_driver.svh, 53
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: direct = 1;
+  Expression: direct
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/calc_monitor.svh, 35
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: this.written = 1;
+  Expression: this.written
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/calc_monitor.svh, 63
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: trans.initialize = 1;
+  Expression: trans.initialize
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/calc_monitor.svh, 2
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: this.written = 0;
+  Expression: this.written
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/calc_sb.svh, 6
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: this.second_read = 0;
+  Expression: this.second_read
+
+
+Lint-[ULCO] Unequal length in comparison operator
+sym_links/calc_seq_item.svh, 31
+vcs_paramclassrepository, "((this.write_end_addr - this.write_start_addr) == (2 * (this.read_end_addr - this.read_start_addr)))"
+  A left 9-bit expression is compared to a right 32-bit expression.
+  Comparing '(this.write_end_addr - this.write_start_addr)' of type logic 
+  [(AddrSize - 1):0]
+  with '(2 * (this.read_end_addr - this.read_start_addr))' of type logic 
+  [31:0].
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/controller.sv, 53
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 9-bit LHS target:
+  Source info: r_addr <= (r_addr + 1);
+  Expression: r_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/controller.sv, 58
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 9-bit LHS target:
+  Source info: w_addr <= (w_addr + 1);
+  Expression: w_addr
+
+
+Lint-[ZERO] Zero delay in design
+sym_links/sky130_sram_2kbyte_1rw1r_32x512_8.sv, 62
+sky130_sram_2kbyte_1rw1r_32x512_8, "T_HOLD"
+  Use of #0 may result in incorrect results or inconsistent behavior.
+
+
+Lint-[ZERO] Zero delay in design
+sym_links/sky130_sram_2kbyte_1rw1r_32x512_8.sv, 80
+sky130_sram_2kbyte_1rw1r_32x512_8, "T_HOLD"
+  Use of #0 may result in incorrect results or inconsistent behavior.
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/calc_if.sv, 21
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: reset = 0;
+  Expression: reset
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/calc_tb_top.sv, 8
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 1-bit LHS target:
+  Source info: clk = 0;
+  Expression: clk
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/calc_tb_top.sv, 97
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: calc_tb_top.calc_if.cb.wr_data <= 3214532;
+  Expression: calc_tb_top.calc_if.cb.wr_data
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/calc_tb_top.sv, 98
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 9-bit LHS target:
+  Source info: calc_tb_top.calc_if.cb.curr_wr_addr <= 0;
+  Expression: calc_tb_top.calc_if.cb.curr_wr_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/calc_tb_top.sv, 103
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 9-bit LHS target:
+  Source info: calc_tb_top.calc_if.cb.curr_rd_addr <= 0;
+  Expression: calc_tb_top.calc_if.cb.curr_rd_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/calc_tb_top.sv, 115
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 64-bit LHS target:
+  Source info: calc_tb_top.calc_if.cb.wr_data <= 3214532;
+  Expression: calc_tb_top.calc_if.cb.wr_data
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/calc_tb_top.sv, 116
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 9-bit LHS target:
+  Source info: calc_tb_top.calc_if.cb.curr_wr_addr <= 0;
+  Expression: calc_tb_top.calc_if.cb.curr_wr_addr
+
+
+Lint-[WMIA-L] Width mismatch in assignment
+sym_links/calc_tb_top.sv, 121
+  Width mismatch between LHS and RHS is found in assignment:
+  The following 32-bit wide expression is assigned to a 9-bit LHS target:
+  Source info: calc_tb_top.calc_if.cb.curr_rd_addr <= 0;
+  Expression: calc_tb_top.calc_if.cb.curr_rd_addr
+
+
+Lint-[SVA-DIU] Disable iff used
+sym_links/calc_tb_top.sv, 294
+calc_tb_top
+  Disable iff is used in assertion 'unnamed$$_26: assert 
+  property(CHECK_CURRENT_ADDRS) else begin
+  $$sva_internal_error(3, 3);
+  $error("Current read/write addrs out of range.");
+  end'
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 5
+  Illegal combination of structural and procedural drivers.
+  Variable "wr_en" is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 5: logic wr_en;
+  The first driver is at "sym_links/calc_tb_top.sv", 34: assign 
+  calc_tb_top.calc_if.wr_en = calc_tb_top.my_calc.write;
+  The second driver is at "sym_links/calc_if.sv", 66: inout wr_en = wr_en;
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 8
+  Illegal combination of structural and procedural drivers.
+  Variable "rd_en" is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 8: logic rd_en;
+  The first driver is at "sym_links/calc_tb_top.sv", 35: assign 
+  calc_tb_top.calc_if.rd_en = calc_tb_top.my_calc.read;
+  The second driver is at "sym_links/calc_if.sv", 66: inout rd_en = rd_en;
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 11
+  Illegal combination of structural and procedural drivers.
+  Variable "ready" is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 11: logic ready;
+  The first driver is at "sym_links/calc_tb_top.sv", 38: assign 
+  calc_tb_top.calc_if.ready = (calc_tb_top.my_calc.u_ctrl.state == S_END);
+  The second driver is at "sym_links/calc_if.sv", 66: inout ready = ready;
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 14
+  Illegal combination of structural and procedural drivers.
+  Variable "loc_sel" is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 14: logic loc_sel;
+  The first driver is at "sym_links/calc_tb_top.sv", 41: assign 
+  calc_tb_top.calc_if.loc_sel = calc_tb_top.my_calc.buffer_control;
+  The second driver is at "sym_links/calc_if.sv", 66: inout loc_sel = loc_sel;
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 33
+  Illegal combination of structural and procedural drivers.
+  Variable "wr_data" is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 33: logic [((DataSize *
+  2) - 1):0] wr_data;
+  The first driver is at "sym_links/calc_tb_top.sv", 36: assign 
+  calc_tb_top.calc_if.wr_data = calc_tb_top.my_calc.w_data;
+  The second driver is at "sym_links/calc_if.sv", 66: inout wr_data = wr_data;
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 48
+  Illegal combination of structural and procedural drivers.
+  Variable "rd_data" is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 48: logic [((DataSize *
+  2) - 1):0] rd_data;
+  The first driver is at "sym_links/calc_tb_top.sv", 37: assign 
+  calc_tb_top.calc_if.rd_data = calc_tb_top.my_calc.r_data;
+  The second driver is at "sym_links/calc_if.sv", 66: inout rd_data = rd_data;
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 51
+  Illegal combination of structural and procedural drivers.
+  Variable "curr_wr_addr" is driven by an invalid combination of structural 
+  and procedural drivers. Variables driven by a structural driver cannot have 
+  any other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 51: logic [(AddrSize - 
+  1):0] curr_wr_addr;
+  The first driver is at "sym_links/calc_tb_top.sv", 40: assign 
+  calc_tb_top.calc_if.curr_wr_addr = calc_tb_top.my_calc.w_addr;
+  The second driver is at "sym_links/calc_if.sv", 66: inout curr_wr_addr = 
+  curr_wr_addr;
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 54
+  Illegal combination of structural and procedural drivers.
+  Variable "curr_rd_addr" is driven by an invalid combination of structural 
+  and procedural drivers. Variables driven by a structural driver cannot have 
+  any other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 54: logic [(AddrSize - 
+  1):0] curr_rd_addr;
+  The first driver is at "sym_links/calc_tb_top.sv", 39: assign 
+  calc_tb_top.calc_if.curr_rd_addr = calc_tb_top.my_calc.r_addr;
+  The second driver is at "sym_links/calc_if.sv", 66: inout curr_rd_addr = 
+  curr_rd_addr;
+  
+  This warning will be upgraded to error in future releases
+  
+
+VCS Coverage Metrics Release W-2024.09-SP2_Full64 Copyright (c) 1991-2024 by Synopsys Inc.
+
+Lint-[SVA-UA] Unnamed Assertion
+sym_links/calc_tb_top.sv, 277
+calc_tb_top
+  Unnamed Assertion found in design
+  \unnamed$$_24: assert property(RESET) else begin
+  $$sva_internal_error(3, 3);
+  $error("Reset is active but DUT did not reset to IDLE. Current state as int:
+  %0d", state);
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+sym_links/calc_tb_top.sv, 285
+calc_tb_top
+  Unnamed Assertion found in design
+  \unnamed$$_25: assert property(BUFFER_TOGGLING) else begin
+  $$sva_internal_error(3, 3);
+  $error("Buffer Select not toggling.");
+  end
+
+
+Lint-[SVA-UA] Unnamed Assertion
+sym_links/calc_tb_top.sv, 294
+calc_tb_top
+  Unnamed Assertion found in design
+  \unnamed$$_26: assert property(CHECK_CURRENT_ADDRS) else begin
+  $$sva_internal_error(3, 3);
+  $error("Current read/write addrs out of range.");
+  end
+
+Starting vcs inline pass...
+7 modules and 0 UDP read.
+recompiling module calc_tb_top
+	However, due to incremental compilation, only 1 module needs to be compiled. 
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 54
+  Illegal combination of structural and procedural drivers.
+  Variable "curr_rd_addr" is driven by an invalid combination of structural 
+  and procedural drivers. Variables driven by a structural driver cannot have 
+  any other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 54: logic [(AddrSize - 
+  1):0] curr_rd_addr;
+  The first driver is at "sym_links/calc_if.sv", 66
+  Hierarchical path: calc_tb_top.calc_if
+  The second driver is at "sym_links/calc_tb_top.sv", 39
+  Hierarchical path: calc_tb_top
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 51
+  Illegal combination of structural and procedural drivers.
+  Variable "curr_wr_addr" is driven by an invalid combination of structural 
+  and procedural drivers. Variables driven by a structural driver cannot have 
+  any other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 51: logic [(AddrSize - 
+  1):0] curr_wr_addr;
+  The first driver is at "sym_links/calc_if.sv", 66
+  Hierarchical path: calc_tb_top.calc_if
+  The second driver is at "sym_links/calc_tb_top.sv", 40
+  Hierarchical path: calc_tb_top
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 14
+  Illegal combination of structural and procedural drivers.
+  Variable "loc_sel" is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 14: logic loc_sel;
+  The first driver is at "sym_links/calc_if.sv", 66
+  Hierarchical path: calc_tb_top.calc_if
+  The second driver is at "sym_links/calc_tb_top.sv", 41
+  Hierarchical path: calc_tb_top
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 48
+  Illegal combination of structural and procedural drivers.
+  Variable "rd_data" is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 48: logic [((DataSize *
+  2) - 1):0] rd_data;
+  The first driver is at "sym_links/calc_if.sv", 66
+  Hierarchical path: calc_tb_top.calc_if
+  The second driver is at "sym_links/calc_tb_top.sv", 37
+  Hierarchical path: calc_tb_top
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 8
+  Illegal combination of structural and procedural drivers.
+  Variable "rd_en" is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 8: logic rd_en;
+  The first driver is at "sym_links/calc_if.sv", 66
+  Hierarchical path: calc_tb_top.calc_if
+  The second driver is at "sym_links/calc_tb_top.sv", 35
+  Hierarchical path: calc_tb_top
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 11
+  Illegal combination of structural and procedural drivers.
+  Variable "ready" is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 11: logic ready;
+  The first driver is at "sym_links/calc_if.sv", 66
+  Hierarchical path: calc_tb_top.calc_if
+  The second driver is at "sym_links/calc_tb_top.sv", 38
+  Hierarchical path: calc_tb_top
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 33
+  Illegal combination of structural and procedural drivers.
+  Variable "wr_data" is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 33: logic [((DataSize *
+  2) - 1):0] wr_data;
+  The first driver is at "sym_links/calc_if.sv", 66
+  Hierarchical path: calc_tb_top.calc_if
+  The second driver is at "sym_links/calc_tb_top.sv", 36
+  Hierarchical path: calc_tb_top
+  
+  This warning will be upgraded to error in future releases
+  
+
+
+Warning-[ICPSD_W] Illegal combination of drivers
+sym_links/calc_if.sv, 5
+  Illegal combination of structural and procedural drivers.
+  Variable "wr_en" is driven by an invalid combination of structural and 
+  procedural drivers. Variables driven by a structural driver cannot have any 
+  other drivers.
+  This variable is declared at "sym_links/calc_if.sv", 5: logic wr_en;
+  The first driver is at "sym_links/calc_if.sv", 66
+  Hierarchical path: calc_tb_top.calc_if
+  The second driver is at "sym_links/calc_tb_top.sv", 34
+  Hierarchical path: calc_tb_top
+  
+  This warning will be upgraded to error in future releases
+  
+
+make[1]: Entering directory '/nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/csrc' \
+
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
+-Wl,-rpath=/tools/software/synopsys/vcs/latest/linux64/lib -L/tools/software/synopsys/vcs/latest/linux64/lib \
+-Wl,-rpath-link=./   objs/amcQw_d.o   _2680660_archive_1.so _prev_archive_1.so   \
+SIM_l.o       rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
+-lnuma -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -lreader_common \
+/tools/software/synopsys/vcs/latest/linux64/lib/libBA.a -luclinative /tools/software/synopsys/vcs/latest/linux64/lib/vcs_tls.o \
+-Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   \
+/tools/software/synopsys/vcs/latest/linux64/lib/vcs_save_restore_new.o /tools/software/synopsys/verdi/latest/share/PLI/VCS/LINUX64/pli.a \
+-ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory '/nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/csrc' \
+
+Command: /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/./simv +v2k +lint=all -cm_runsilent -cm line+tgl+cond+branch+fsm+assert -a simulation.log +vpdfile+./simulation.vpd +fsdb+./simulation.fsdb +dumpvars +define+SIM=1+VCS=1 +testname=
+Chronologic VCS simulator copyright 1991-2024
+Contains Synopsys proprietary information.
+Compiler version W-2024.09-SP2_Full64; Runtime version W-2024.09-SP2_Full64;  Sep 27 21:14 2025
+*Verdi* Loading libsscore_vcs202409.so
+FSDB Dumper for VCS, Release Verdi_W-2024.09-SP2-1, Linux x86_64/64bit, 06/18/2025
+(C) 1996 - 2025 by Synopsys, Inc.
+*Verdi* WARNING: fsdbDumpon - The FSDB file has not been created.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file 'simulation.fsdb'
+*Verdi* : Begin traversing the scope (calc_tb_top), layer (0).
+*Verdi* : Enable +trace_process, +all and +mda dumping.
+*Verdi* : End of traversing.
+*Verdi* : Begin traversing the MDAs, layer (0).
+*Verdi* : Enable +mda and +packedmda dumping.
+*Verdi* : End of traversing the MDAs.
+Read/Write SRAM test
+SRAM A
+SRAM Read/Write Success
+SRAM B
+SRAM Read/Write Success
+Directed Testing
+Testing state transitions
+[39500] Applying reset
+[45500] Applying reset
+[45500] Reset deasserted
+[45500] Starting calculation: read 0x0-0x1, write 0x2-0x2
+[50500] Reset deasserted
+[64500] Applying reset
+[70500] Reset deasserted
+[104500] Applying reset
+[110500] Reset deasserted
+[110500] Starting calculation: read 0x0-0x1, write 0x2-0x2
+[114500] Applying reset
+[119500] Reset deasserted
+[133500] Applying reset
+[139500] Reset deasserted
+[173500] Applying reset
+[179500] Reset deasserted
+[179500] Starting calculation: read 0x0-0x1, write 0x2-0x2
+[180500] Applying reset
+[185500] Reset deasserted
+[199500] Applying reset
+[205500] Reset deasserted
+Test case 1 - normal addition
+[239500] Applying reset
+[245500] Reset deasserted
+[245500] Starting calculation: read 0x0-0x1, write 0x2-0x2
+[259500] Applying reset
+[265500] Reset deasserted
+Test case 2 - addition with overflow
+[309500] Applying reset
+[315500] Reset deasserted
+[315500] Starting calculation: read 0x0-0x1, write 0x2-0x2
+[329500] Applying reset
+[335500] Reset deasserted
+Boundary Testing
+Testing 0 + 0
+[379500] Applying reset
+[385500] Reset deasserted
+[385500] Starting calculation: read 0x0-0x1, write 0x2-0x2
+[399500] Applying reset
+[405500] Reset deasserted
+Testing 0 + MAX
+[449500] Applying reset
+[455500] Reset deasserted
+[455500] Starting calculation: read 0x0-0x1, write 0x2-0x2
+[469500] Applying reset
+[475500] Reset deasserted
+Randomized Testing
+Random Cycle 0
+[2568500] Applying reset
+[2574500] Reset deasserted
+[2574500] Starting calculation: read 0x93-0xa2, write 0xb0-0xce
+[2988500] Applying reset
+[2994500] Reset deasserted
+Random Cycle 1
+[5202500] Applying reset
+[5208500] Reset deasserted
+[5208500] Starting calculation: read 0x45-0x66, write 0x114-0x156
+[5222500] Applying reset
+[5228500] Reset deasserted
+Random Cycle 2
+[7481500] Applying reset
+[7487500] Reset deasserted
+[7487500] Starting calculation: read 0xb7-0xc2, write 0x15c-0x172
+[7811500] Applying reset
+[7817500] Reset deasserted
+Random Cycle 3
+[10015500] Applying reset
+[10021500] Reset deasserted
+[10021500] Starting calculation: read 0x10-0x6c, write 0x107-0x1bf
+[10035500] Applying reset
+[10041500] Reset deasserted
+Random Cycle 4
+[12439500] Applying reset
+[12445500] Reset deasserted
+[12445500] Starting calculation: read 0x8f-0xda, write 0xfe-0x194
+[12959500] Applying reset
+[12965500] Reset deasserted
+Random Cycle 5
+[15323500] Applying reset
+[15329500] Reset deasserted
+[15329500] Starting calculation: read 0x4f-0x7a, write 0x19e-0x1f4
+[15343500] Applying reset
+[15349500] Reset deasserted
+Random Cycle 6
+[17627500] Applying reset
+[17633500] Reset deasserted
+[17633500] Starting calculation: read 0x118-0x145, write 0x14e-0x1a8
+[17697500] Applying reset
+[17703500] Reset deasserted
+Random Cycle 7
+[19986500] Applying reset
+[19992500] Reset deasserted
+[19992500] Starting calculation: read 0x7d-0xa1, write 0x102-0x14a
+[20006500] Applying reset
+[20012500] Reset deasserted
+Random Cycle 8
+[22270500] Applying reset
+[22276500] Reset deasserted
+[22276500] Starting calculation: read 0xd1-0x125, write 0x148-0x1f0
+[22705500] Applying reset
+[22711500] Reset deasserted
+Random Cycle 9
+[25089500] Applying reset
+[25095500] Reset deasserted
+[25095500] Starting calculation: read 0x1d-0x4a, write 0x104-0x15e
+[25109500] Applying reset
+[25115500] Reset deasserted
+Random Cycle 10
+[27398500] Applying reset
+[27404500] Reset deasserted
+[27404500] Starting calculation: read 0x4b-0x4e, write 0x1ce-0x1d4
+[27538500] Applying reset
+[27544500] Reset deasserted
+Random Cycle 11
+[29722500] Applying reset
+[29728500] Reset deasserted
+[29728500] Starting calculation: read 0x10-0x77, write 0xae-0x17c
+[29742500] Applying reset
+[29748500] Reset deasserted
+Random Cycle 12
+[32176500] Applying reset
+[32182500] Reset deasserted
+[32182500] Starting calculation: read 0xe-0x7c, write 0xfc-0x1d8
+[32461500] Applying reset
+[32467500] Reset deasserted
+Random Cycle 13
+[34910500] Applying reset
+[34916500] Reset deasserted
+[34916500] Starting calculation: read 0x8a-0xa9, write 0x162-0x1a0
+[35315500] Applying reset
+[35321500] Reset deasserted
+Random Cycle 14
+[37569500] Applying reset
+[37575500] Reset deasserted
+[37575500] Starting calculation: read 0xa4-0xa5, write 0x122-0x124
+[37589500] Applying reset
+[37595500] Reset deasserted
+Random Cycle 15
+[39768500] Applying reset
+[39774500] Reset deasserted
+[39774500] Starting calculation: read 0x7b-0xb6, write 0xca-0x140
+[39828500] Applying reset
+[39834500] Reset deasserted
+Random Cycle 16
+[42152500] Applying reset
+[42158500] Reset deasserted
+[42158500] Starting calculation: read 0xfe-0x12c, write 0x169-0x1c5
+[42612500] Applying reset
+[42618500] Reset deasserted
+Random Cycle 17
+[44901500] Applying reset
+[44907500] Reset deasserted
+[44907500] Starting calculation: read 0x31-0x3d, write 0x92-0xaa
+[44921500] Applying reset
+[44927500] Reset deasserted
+Random Cycle 18
+[47125500] Applying reset
+[47131500] Reset deasserted
+[47131500] Starting calculation: read 0x40-0xab, write 0xb7-0x18d
+[47445500] Applying reset
+[47451500] Reset deasserted
+Random Cycle 19
+[49889500] Applying reset
+[49895500] Reset deasserted
+[49895500] Starting calculation: read 0x2b-0x92, write 0xd7-0x1a5
+[50109500] Applying reset
+[50115500] Reset deasserted
+Random Cycle 20
+[52543500] Applying reset
+[52549500] Reset deasserted
+[52549500] Starting calculation: read 0x99-0xa1, write 0x1d3-0x1e3
+[52853500] Applying reset
+[52859500] Reset deasserted
+Random Cycle 21
+[55047500] Applying reset
+[55053500] Reset deasserted
+[55053500] Starting calculation: read 0x38-0x94, write 0xed-0x1a5
+[55067500] Applying reset
+[55073500] Reset deasserted
+Random Cycle 22
+[57471500] Applying reset
+[57477500] Reset deasserted
+[57477500] Starting calculation: read 0x120-0x138, write 0x17e-0x1ae
+[58126500] Applying reset
+[58132500] Reset deasserted
+Random Cycle 23
+[60360500] Applying reset
+[60366500] Reset deasserted
+[60366500] Starting calculation: read 0x33-0x3c, write 0x160-0x172
+[60380500] Applying reset
+[60386500] Reset deasserted
+Random Cycle 24
+[62579500] Applying reset
+[62585500] Reset deasserted
+[62585500] Starting calculation: read 0x86-0xf0, write 0x11f-0x1f3
+[63069500] Applying reset
+[63075500] Reset deasserted
+Random Cycle 25
+[65508500] Applying reset
+[65514500] Reset deasserted
+[65514500] Starting calculation: read 0xc6-0xd8, write 0x17a-0x19e
+[65728500] Applying reset
+[65734500] Reset deasserted
+Random Cycle 26
+[67947500] Applying reset
+[67953500] Reset deasserted
+[67953500] Starting calculation: read 0x38-0x72, write 0x152-0x1c6
+[67967500] Applying reset
+[67973500] Reset deasserted
+Random Cycle 27
+[70286500] Applying reset
+[70292500] Reset deasserted
+[70292500] Starting calculation: read 0x133-0x155, write 0x16c-0x1b0
+[70776500] Applying reset
+[70782500] Reset deasserted
+Random Cycle 28
+[73035500] Applying reset
+[73041500] Reset deasserted
+[73041500] Starting calculation: read 0xf7-0x123, write 0x185-0x1dd
+[73055500] Applying reset
+[73061500] Reset deasserted
+Random Cycle 29
+[75339500] Applying reset
+[75345500] Reset deasserted
+[75345500] Starting calculation: read 0x4e-0x84, write 0x8a-0xf6
+[75359500] Applying reset
+[75365500] Reset deasserted
+Random Cycle 30
+[77668500] Applying reset
+[77674500] Reset deasserted
+[77674500] Starting calculation: read 0xa5-0xd9, write 0x12e-0x196
+[78033500] Applying reset
+[78039500] Reset deasserted
+Random Cycle 31
+[80337500] Applying reset
+[80343500] Reset deasserted
+[80343500] Starting calculation: read 0xc4-0xcf, write 0xf9-0x10f
+[80357500] Applying reset
+[80363500] Reset deasserted
+Random Cycle 32
+[82561500] Applying reset
+[82567500] Reset deasserted
+[82567500] Starting calculation: read 0x12c-0x12d, write 0x135-0x137
+[82841500] Applying reset
+[82847500] Reset deasserted
+Random Cycle 33
+[85020500] Applying reset
+[85026500] Reset deasserted
+[85026500] Starting calculation: read 0xb5-0xbe, write 0x18e-0x1a0
+[85040500] Applying reset
+[85046500] Reset deasserted
+Random Cycle 34
+[87239500] Applying reset
+[87245500] Reset deasserted
+[87245500] Starting calculation: read 0xc0-0xde, write 0x19f-0x1db
+[87359500] Applying reset
+[87365500] Reset deasserted
+Random Cycle 35
+[89608500] Applying reset
+[89614500] Reset deasserted
+[89614500] Starting calculation: read 0x5d-0x91, write 0xc6-0x12e
+[89628500] Applying reset
+[89634500] Reset deasserted
+Random Cycle 36
+[91932500] Applying reset
+[91938500] Reset deasserted
+[91938500] Starting calculation: read 0xf9-0x11b, write 0x1b6-0x1fa
+[92422500] Applying reset
+[92428500] Reset deasserted
+Random Cycle 37
+[94681500] Applying reset
+[94687500] Reset deasserted
+[94687500] Starting calculation: read 0x45-0xb6, write 0xf2-0x1d4
+[94701500] Applying reset
+[94707500] Reset deasserted
+Random Cycle 38
+[97160500] Applying reset
+[97166500] Reset deasserted
+[97166500] Starting calculation: read 0x1f-0x49, write 0x58-0xac
+[97180500] Applying reset
+[97186500] Reset deasserted
+Random Cycle 39
+[99459500] Applying reset
+[99465500] Reset deasserted
+[99465500] Starting calculation: read 0xd0-0xd3, write 0x16b-0x171
+[99924500] Applying reset
+[99930500] Reset deasserted
+Random Cycle 40
+[102108500] Applying reset
+[102114500] Reset deasserted
+[102114500] Starting calculation: read 0xec-0xee, write 0x1b1-0x1b5
+[102198500] Applying reset
+[102204500] Reset deasserted
+Random Cycle 41
+[104377500] Applying reset
+[104383500] Reset deasserted
+[104383500] Starting calculation: read 0xcb-0xcf, write 0x184-0x18c
+[104397500] Applying reset
+[104403500] Reset deasserted
+Random Cycle 42
+[106581500] Applying reset
+[106587500] Reset deasserted
+[106587500] Starting calculation: read 0xe3-0x10b, write 0x197-0x1e7
+[106756500] Applying reset
+[106762500] Reset deasserted
+Random Cycle 43
+[109030500] Applying reset
+[109036500] Reset deasserted
+[109036500] Starting calculation: read 0x24-0x55, write 0xa9-0x10b
+[109050500] Applying reset
+[109056500] Reset deasserted
+Random Cycle 44
+[111349500] Applying reset
+[111355500] Reset deasserted
+[111355500] Starting calculation: read 0x13-0x50, write 0x12f-0x1a9
+[111474500] Applying reset
+[111480500] Reset deasserted
+Random Cycle 45
+[113803500] Applying reset
+[113809500] Reset deasserted
+[113809500] Starting calculation: read 0x4-0x3a, write 0x54-0xc0
+[113823500] Applying reset
+[113829500] Reset deasserted
+Random Cycle 46
+[116132500] Applying reset
+[116138500] Reset deasserted
+[116138500] Starting calculation: read 0xc3-0xec, write 0xf9-0x14b
+[116727500] Applying reset
+[116733500] Reset deasserted
+Random Cycle 47
+[119006500] Applying reset
+[119012500] Reset deasserted
+[119012500] Starting calculation: read 0x4c-0x95, write 0x15c-0x1ee
+[119026500] Applying reset
+[119032500] Reset deasserted
+Random Cycle 48
+[121385500] Applying reset
+[121391500] Reset deasserted
+[121391500] Starting calculation: read 0x22-0x2d, write 0x148-0x15e
+[121405500] Applying reset
+[121411500] Reset deasserted
+Random Cycle 49
+[123609500] Applying reset
+[123615500] Reset deasserted
+[123615500] Starting calculation: read 0x6b-0x87, write 0x187-0x1bf
+[123879500] Applying reset
+[123885500] Reset deasserted
+TEST PASSED
+$finish called from file "sym_links/calc_tb_top.sv", line 263.
+$finish at simulation time            124066500
+
+---------------------------------------------------------------------------
+VCS Coverage Metrics: during simulation line, cond, FSM, branch, tgl was monitored
+---------------------------------------------------------------------------
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 1240665000 ps
+CPU Time:      2.870 seconds;       Data structure size:   0.1Mb
+Sat Sep 27 21:14:50 2025
+CPU time: 1.001 seconds to compile + .480 seconds to elab + .581 seconds to link + 2.965 seconds in simulation
+Verdi KDB elaboration done and the database successfully generated

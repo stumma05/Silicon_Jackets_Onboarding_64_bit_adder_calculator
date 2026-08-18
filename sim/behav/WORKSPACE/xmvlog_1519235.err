@@ -1,0 +1,227 @@
+csi-xmvlog - CSI: Command line:
+xmvlog
+    -f /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/xcelium.d/run.lnx8664.25.03.d/xmvlog.args
+        -XLMODE ./xcelium.d/run.lnx8664.25.03.d
+        -RUNMODE
+        -sv
+        -LINEDEBUG
+        -DEFINE SIM=1
+        -DEFINE CADENCE=1
+        -INCDIR sym_links
+        sym_links/calculator_pkg.sv
+        sym_links/adder32.sv
+        sym_links/controller.sv
+        sym_links/full_adder.sv
+        sym_links/result_buffer.sv
+        sym_links/sky130_sram_2kbyte_1rw1r_32x512_8.sv
+        sym_links/top_lvl.sv
+        sym_links/calc_seq_item.svh
+        sym_links/calc_tb_pkg.sv
+        sym_links/calc_driver.svh
+        sym_links/calc_monitor.svh
+        sym_links/calc_sb.svh
+        sym_links/calc_sequencer.svh
+        sym_links/calc_if.sv
+        sym_links/calc_tb_top.sv
+        -CDSLIB ./xcelium.d/run.lnx8664.25.03.d/cdsrun.lib
+        -HDLVAR ./xcelium.d/run.lnx8664.25.03.d/hdlrun.var
+        -no_analogsolver
+        -MESSAGES
+        -UPDATE
+        -XLLIBSTORE ./xcelium.d/run.lnx8664.25.03.d/xllibs
+        -ALLOWUNBOUND
+        -sv_ms
+    -CHECK_VERSION TOOL:	xrun(64)	25.03-s003
+    -LOG_FD 4
+
+csi-xmvlog - CSI: *F,XMERROR_5744: smi_set_source_marker - default
+Additional info:
+TOOL:	xmvlog(64)	25.03-s003 (CL: 779937 ), ece-linlabsrv01, Linux 4.18.0-553.69.1.el8_10.x86_64 #1 SMP Thu Aug 7 18:10:00 EDT 2025 x86_64
+
+csi-xmvlog - CSI: Cadence Support Investigation, recording details
+Verilog Syntax Tree: root (VST_ROOT) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/adder32.sv, line 4, position 5
+	Decompile: $unit_0x201ca083
+	Source  : import calculator_pkg::*;
+	Position:      ^
+Verilog Syntax Tree: compilation unit declaration (VST_D_COMP_UNIT) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/adder32.sv, line 4, position 5
+	Scope: $unit_0x201ca083
+	Decompile: $unit_0x201ca083
+	Source  : import calculator_pkg::*;
+	Position:      ^
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_driver.svh, line 1, position 16
+	Scope: $unit_0x201ca083::calc_driver
+	Decompile: $unit_0x201ca083::calc_driver#(DataSize,AddrSize)
+	Source  : class calc_driver #(int DataSize, int AddrSize);
+	Position:                 ^
+Verilog Syntax Tree: register declaration (VST_D_REG) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_driver.svh, line 5, position 68
+	Scope: $unit_0x201ca083::calc_driver
+	Decompile: virtual interface calcVif
+	Source  :   virtual calc_if #(.DataSize(DataSize), .AddrSize(AddrSize)) calcVif;
+	Position:                                                                     ^
+Verilog Syntax Tree: instance declaration (VST_D_INSTANCE) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_driver.svh, line 5, position 16
+	Scope: $unit_0x201ca083::calc_driver
+	Decompile: <instance>
+	Source  :   virtual calc_if #(.DataSize(DataSize), .AddrSize(AddrSize)) calcVif;
+	Position:                 ^
+Verilog Syntax Tree: virtual interface type (VST_T_VIRTUAL_IFC) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	Scope: $unit_0x201ca083::calc_driver
+	Decompile: virtual interface
+Verilog Syntax Tree: typeref expression (VST_E_TYPEREF) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_driver.svh, line 3, position 24
+	Decompile: typeref
+	Source  :   mailbox #(calc_seq_item #(DataSize, AddrSize)) drv_box;
+	Position:                         ^
+Verilog Syntax Tree: list expression (VST_VE_LIST) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	Decompile: unable to decompile type 631
+Verilog Syntax Tree: class type (VST_T_CLASS) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_driver.svh, line 3, position 24
+	Scope: $unit_0x201ca083::calc_driver
+	Decompile: $unit_0x201ca083::calc_seq_item#()
+	Source  :   mailbox #(calc_seq_item #(DataSize, AddrSize)) drv_box;
+	Position:                         ^
+Verilog Syntax Tree: function declaration (VST_D_FUNCTION) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_driver.svh, line 1, position 16
+	Scope: $unit_0x201ca083::calc_driver::get_randstate
+	Decompile: string get_randstate
+	Source  : class calc_driver #(int DataSize, int AddrSize);
+	Position:                 ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_driver.svh, line 3, position 45
+	Scope: $unit_0x201ca083::calc_driver
+	Decompile: AddrSize
+	Source  :   mailbox #(calc_seq_item #(DataSize, AddrSize)) drv_box;
+	Position:                                              ^
+Verilog Syntax Tree: number expression (VST_E_NUMBER) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	Decompile: 0
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sequencer.svh, line 1, position 19
+	Scope: $unit_0x201ca083::calc_sequencer::post_randomize
+	Decompile: post_randomize
+	Source  : class calc_sequencer #(int DataSize, int AddrSize);
+	Position:                    ^
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sequencer.svh, line 1, position 19
+	Scope: $unit_0x201ca083::calc_sequencer
+	Decompile: $unit_0x201ca083::calc_sequencer#(DataSize,AddrSize)
+	Source  : class calc_sequencer #(int DataSize, int AddrSize);
+	Position:                    ^
+Intermediate File: string (IF_STRING) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	Decompile: post_randomize
+Verilog Syntax Tree: statement label declaration (VST_D_STMT_LABEL) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sequencer.svh, line 10, position 4094
+	Scope: $unit_0x201ca083::calc_sequencer::gen.<stmt label>
+	Decompile: unable to decompile type 541
+	Source  :     repeat (num) begin
+Verilog Syntax Tree: task enable statement (VST_S_TASK_ENABLE) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sequencer.svh, line 13, position 17
+	Scope: $unit_0x201ca083::calc_sequencer::gen.<stmt label>
+	Decompile: unable to decompile type 651
+	Source  :       calc_box.put(my_trans);
+	Position:                  ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sequencer.svh, line 9, position 9
+	Scope: $unit_0x201ca083::calc_sequencer::gen
+	Decompile: gen
+	Source  :   task gen (int num);
+	Position:          ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sequencer.svh, line 13, position 26
+	Scope: $unit_0x201ca083::calc_sequencer::gen.<stmt label>
+	Decompile: my_trans
+	Source  :       calc_box.put(my_trans);
+	Position:                           ^
+Verilog Syntax Tree: named connection expression (VST_E_NAMED_CONNECTION) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sequencer.svh, line 13, position 26
+	Decompile: named connection
+	Source  :       calc_box.put(my_trans);
+	Position:                           ^
+Intermediate File: string (IF_STRING) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	Decompile: my_trans
+Verilog Syntax Tree: class type (VST_T_CLASS) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sequencer.svh, line 11, position 18
+	Scope: $unit_0x201ca083::calc_sequencer::gen.<stmt label>
+	Decompile: $unit_0x201ca083::calc_seq_item#()
+	Source  :       calc_seq_item #(DataSize, AddrSize) my_trans = new();
+	Position:                   ^
+Verilog Syntax Tree: register declaration (VST_D_REG) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sequencer.svh, line 11, position 49
+	Scope: $unit_0x201ca083::calc_sequencer::gen.<stmt label>
+	Decompile: $unit_0x201ca083::calc_seq_item#() my_trans
+	Source  :       calc_seq_item #(DataSize, AddrSize) my_trans = new();
+	Position:                                                  ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sequencer.svh, line 11, position 39
+	Scope: $unit_0x201ca083::calc_sequencer
+	Decompile: AddrSize
+	Source  :       calc_seq_item #(DataSize, AddrSize) my_trans = new();
+	Position:                                        ^
+Verilog Syntax Tree: indexed vector type (VST_T_INDEXED_VEC) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	Decompile: int
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sb.svh, line 1, position 12
+	Scope: $unit_0x201ca083::calc_sb
+	Decompile: $unit_0x201ca083::calc_sb#(DataSize,AddrSize)
+	Source  : class calc_sb #(int DataSize, int AddrSize);
+	Position:             ^
+Verilog Syntax Tree: register declaration (VST_D_REG) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sb.svh, line 7, position 22
+	Scope: $unit_0x201ca083::calc_sb
+	Decompile: int golden_lower_data
+	Source  :   int golden_lower_data;
+	Position:                       ^
+Verilog Syntax Tree: identifier expression (VST_E_IDENTIFIER) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sb.svh, line 67, position 75
+	Scope: $unit_0x201ca083::calc_sb
+	Decompile: golden_lower_data
+	Source  :                     trans.curr_rd_addr, golden_upper_data, golden_lower_data,
+	Position:                                                                            ^
+Verilog Syntax Tree: sequential block statement (VST_S_SEQ_BLOCK) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sequencer.svh, line 10, position 21
+	Scope: $unit_0x201ca083::calc_sequencer::gen.<stmt label>
+	Source  :     repeat (num) begin
+	Position:                      ^
+Verilog Syntax Tree: parameter declaration (VST_D_PARAMETER) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sequencer.svh, line 1, position 48
+	Scope: $unit_0x201ca083::calc_sequencer
+	Decompile: int AddrSize
+	Source  : class calc_sequencer #(int DataSize, int AddrSize);
+	Position:                                                 ^
+Intermediate File: string (IF_STRING) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	Decompile: golden_lower_data
+Intermediate File: string (IF_STRING) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	Decompile: AddrSize
+Verilog Syntax Tree: class declaration (VST_D_CLASS) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_monitor.svh, line 1, position 17
+	Scope: $unit_0x201ca083::calc_monitor
+	Decompile: $unit_0x201ca083::calc_monitor#(DataSize,AddrSize)
+	Source  : class calc_monitor #(int DataSize, int AddrSize);
+	Position:                  ^
+Verilog Syntax Tree: task declaration (VST_D_TASK) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_monitor.svh, line 12, position 10
+	Scope: $unit_0x201ca083::calc_monitor::main
+	Decompile: main
+	Source  :   task main();
+	Position:           ^
+Verilog Syntax Tree: parameter declaration (VST_D_PARAMETER) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_sb.svh, line 1, position 27
+	Scope: $unit_0x201ca083::calc_sb
+	Decompile: int DataSize
+	Source  : class calc_sb #(int DataSize, int AddrSize);
+	Position:                            ^
+Intermediate File: string (IF_STRING) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	Decompile: DataSize
+Verilog Syntax Tree: parameter declaration (VST_D_PARAMETER) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	File: sym_links/calc_monitor.svh, line 1, position 32
+	Scope: $unit_0x201ca083::calc_monitor
+	Decompile: int DataSize
+	Source  : class calc_monitor #(int DataSize, int AddrSize);
+	Position:                                 ^
+Intermediate File: string (IF_STRING) in compilation_unit worklib.\$unit_0x201ca083 :compilation_unit (VST)
+	Decompile: calculator_pkg
+Intermediate File: root (IF_ROOT)
+csi-xmvlog - CSI: investigation complete took 0.045 secs, send this file to Cadence Support

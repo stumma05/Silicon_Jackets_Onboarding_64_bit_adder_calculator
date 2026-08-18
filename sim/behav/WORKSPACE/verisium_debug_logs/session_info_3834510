@@ -1,0 +1,24 @@
+Host Info
+	Hostname: ece-linlabsrv01
+	Verisium Debug PID: 3834510
+	OS Version: 4.18.0-553.69.1.el8_10.x86_64
+	OS Architecture: amd64
+	JDK Version: 11.0.2
+	Scripting Port: 33469
+	xmsim PID: 3830725
+Design
+	Design Database: /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/xcelium.d/worklib/calc_tb_top/sv/debug_db/debug_db_design
+Versions
+	Verisium Debug Version: 25.03.001-s
+	xcelium version: 25.03-s003
+	lwd/snapshot version: 25.03-s003
+Invocation command: /tools/software/cadence/verisumdbg/latest/tools/bin/verisium_debug_internal   -connect dc:ece-linlabsrv01.ece.gatech.edu:42149 -interactive
+Databases
+	Parser Database: /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/xcelium.d/run.lnx8664.25.03.d/debug_db_parser
+Log Files
+	env log: /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/verisium_debug_logs/env.log
+	verisium_debug log: /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/verisium_debug_logs/verisium_debug.log
+	verisium_debug_karaf log: /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/verisium_debug_logs/verisium_debug_karaf.log
+	ida log: /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/verisium_debug_logs/ida.log
+	cdns_vwdbr log: /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/verisium_debug_logs/cdns_vwdbr.log
+	perf log: /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/verisium_debug_logs/perf.log

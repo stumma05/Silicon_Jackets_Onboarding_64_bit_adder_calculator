@@ -1,0 +1,72 @@
+karaf: PID is: 3834307 (this is karaf's PID. for verisium debug PID cat verisium_debug.pid in the logs directory)
+Picked up _JAVA_OPTIONS:  -XX:+ExitOnOutOfMemoryError -XX:OnOutOfMemoryError="touch /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/verisium_debug_logs/out_of_memory_error" 
+CompileCommand: exclude javax/swing/text/GlyphView.getBreakSpot
+WARNING: package com.sun.java.swing.plaf.windows not in java.desktop
+WARNING: sun.reflect.Reflection.getCallerClass is not supported. This will impact performance.
+Loading libdac.so from /tools/software/cadence/verisumdbg/latest/tools/lib/64bit/libdac.so
+
+
+in 'SimConnect::_simcontrolConnect' overlay db = null, overlayH = 0, is valid = false, operation = dapOpen, duFilename = null, isLiveSim = true
+in 'JDACTBDataProvider::notifyLiveConnectionDB', sessionId = 0
+
+
+**** found lwd dir to be: /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/xcelium.d/worklib/calc_tb_top/sv
+
+
+
+**** found cdslib to be: /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/xcelium.d/run.d/cds.lib
+
+in 'JDACTBDataProvider::notifyLiveConnectionDB', 'dbH' represents 'simulator' db.
+PPEAttributes values:
+    isAutofetch = false
+    isPersistentSources = false
+    isXprop = false
+    cdslib = /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/xcelium.d/run.d/cds.lib
+    snapshot = worklib.calc_tb_top:sv
+    workdir = /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE
+    xceliumDir = /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/xcelium.d
+    rundDir = /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/xcelium.d/run.d
+    bits = 64
+    cds_implicit_tmpdir = 
+    cds_alternate_tmpdir = 
+    du_agent = 
+    lwddir = /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/xcelium.d/worklib/calc_tb_top/sv
+    cds_alternate_cdslib = 
+    elab_options = 
+    found = true
+    nclsRun = false
+    includeCdslib = true
+    nclsOpts =  -snapshot -cdslib /nethome/stumma8/New_DV_Onboarding/sim/behav/WORKSPACE/xcelium.d/run.d/cds.lib -64
+    isMceMode = false
+    isMceInvolved = false
+    mceLshmDbPath = 
+    lowPowerInformationAvailable = false
+    hasLshmFile = false
+    workdirIsDirectory = true
+    hasOverlayRelatedInformation = true
+    cds_implicit_tmplib = 
+    cds_other_implicit_tmplibs = 
+
+
+Dump Strap Design DB Order:
+Strap design: simulator #8
+
+End of dump Strap Design DB Order
+
+
+
+
+
+
+Scripting Service started, listening on port 33469...
+
+
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.cadence.ufi.gui.views.ui.InnerContentTabbedPaneUI (jar:bundle://a45f8c1e-4e49-494c-8fea-92fff5120641_77.0:0/!/) to field javax.swing.plaf.basic.BasicTabbedPaneUI.tabScroller
+WARNING: Please consider reporting this to the maintainers of com.cadence.ufi.gui.views.ui.InnerContentTabbedPaneUI
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+GOT COMMAND: 
+
+*** shutting down gRPC server since JVM is shutting down
+*** server shut down
